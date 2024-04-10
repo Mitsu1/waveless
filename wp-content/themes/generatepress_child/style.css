@@ -1,0 +1,125 @@
+/*
+	Theme Name:   GeneratePress Child
+	Theme URI:    https://generatepress.com
+	Description:  Default GeneratePress child theme
+	Author:       Tom Usborne
+	Author URI:   https://tomusborne.com
+	Template:     generatepress
+	Version:      0.1
+*/
+/* GLOBAL */
+html{
+    scroll-behavior: smooth;
+}
+.max-width-20ch{
+	max-width: 20ch;
+}
+.max-width-40ch{
+	max-width: 40ch;
+}
+
+/* ICONS */
+.icon-arrow{
+	font-size: 18px;
+    padding-left: 10px;
+	transform: translate(0%, 50%); /* Centra el ícono */
+	transition: left 0.3s ease; /* Transición para el movimiento horizontal */
+}
+
+/* BUTTONS */
+.button, .wp-block-button .wp-block-button__link {
+    display: inline;
+	border-radius: 3px;
+}
+.wp-block-button__link strong{
+	font-weight: 500;
+}
+.wp-element-button {
+	height: 40px
+}
+/* HEADER SECTION */
+.site-header{
+	height: 80px;
+    align-content: center;
+	box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 0px;
+	z-index: 1000;
+	
+}
+
+.footer-image {
+	height: auto;
+    max-width: 50%;
+}
+
+.footer-widgets-container{
+	height: 325px
+}
+.footer-info .site, .footer-link {
+	font-size: 14px;
+	text-decoration: none;
+	font-family: Lato, sans-serif;  
+}
+.footer-link:hover, .main-navigation li:hover{
+	text-decoration: underline;
+}
+.footer-column-title{
+	color: var(--base-3);
+}
+.footer-link{
+	padding-bottom: 12px;
+}
+.footer-column {
+	height: 100px;
+	display: grid;
+	margin-bottom: 30px;
+    grid-row-gap: 16px;
+	grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+
+}
+.footer-navigation {
+	height: 250px;
+    display: flex;
+    margin-top: 20px;
+    grid-column-gap: 124px;
+	
+}
+.social-media {
+    display: flex;
+    margin-top: 20px;
+    grid-column-gap: 25px;
+	padding-left: 10px;
+}
+.site-info{
+	padding-top: 20px;
+}
+.inside-site-info {
+	padding: 20px 40px 40px 40px;
+	position: relative;
+	font-family: Inter, sans-serif;
+}
+.inside-site-info::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 40px;
+	width: 93.28%;
+	height: 1px;
+	background-color: var(--base-3);
+}
+.copyright-bar, .copyright {
+	width: 100%;
+	display: flex;
+}
+.copyright-left-side {
+	width: 65%;
+	align-content: center;
+    text-align: left;
+}
+.copyright-right-side {
+	width: 35%;
+	align-content: center;
+    text-align: right;
+}
