@@ -18,25 +18,6 @@ html{
 	max-width: 40ch;
 }
 
-/* ICONS */
-.icon-arrow{
-	font-size: 18px;
-    padding-left: 10px;
-	transform: translate(0%, 50%); /* Centra el ícono */
-	transition: left 0.3s ease; /* Transición para el movimiento horizontal */
-}
-
-/* BUTTONS */
-.button, .wp-block-button .wp-block-button__link {
-    display: inline;
-	border-radius: 3px;
-}
-.wp-block-button__link strong{
-	font-weight: 500;
-}
-.wp-element-button {
-	height: 40px
-}
 /* HEADER SECTION */
 .site-header{
 	height: 80px;

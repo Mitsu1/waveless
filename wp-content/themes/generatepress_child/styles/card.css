@@ -29,15 +29,7 @@
     letter-spacing: 0.1em;
     display: inline-block;
 }
-.ch-bg-color{
-    border-radius: 3px;
-    border: 1px solid #000; /* Grosor y color del borde */
-    
-}
-.ch-bg-color:hover{
-    background-color: var(--base-4);
-    border: 1px solid transparent;
-}
+
 .card-title{
     padding-top:20px;
 }

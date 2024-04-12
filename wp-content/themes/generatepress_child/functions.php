@@ -5,20 +5,13 @@
  * Add your custom PHP in this file.
  * Only edit this file if you have direct access to it on your server (to fix errors if they happen).
  */
-include('custom_shortcode.php');
+include('routes.php');
+include('components/card.php');
+include('components/copyright.php');
 
 add_filter( 'generate_copyright','my_custom_copyright' );
 function my_custom_copyright() {
-    ?>
-	<div class = "copyright">	
-		<div class = 'copyright-left-side'>Copyright <?php echo(date('Y'))?></div>
-		<div class = 'copyright-right-side'>
-			Powered by 
-			<a href="https://generatepress.com/" target="_blank" class="footer-link underline">			GeneratePress</a> — Developed by 
-			<a href="./" target="_blank" class="footer-link-copyright underline">MGovea</a>
-		</div>
-	</div> 
-    <?php
+    echo get_copyright();
 }
 
 /* Divide footer widget content size by 2*/
@@ -28,18 +21,22 @@ function custom_generate_footer_widgets( $widgets ) {
 }
 
 /* Add custom js/css into header */
-$custom_props = array('shortcode'=> array ('.css' => '/'));
+get_routes($custom_props, $extensions);
 //use ayuda a importar variables dentro de mi funcion anonima (closure)
-foreach ( $custom_props as $prop => $typePath ){
-    foreach ( $typePath as $type => $path ){
-        add_action( 'wp_enqueue_scripts', function() use ($prop, $path, $type){
-            child_theme_styles(array("id" => $prop,"path" => $path . $prop . $type));
+foreach ( $custom_props as $file => $path ){
+        add_action( 'wp_enqueue_scripts', function() use ($file, $path, $extensions){
+            foreach($path as $folder){
+                child_theme_assets(array("id" => $file,"path" => "./$folder/$file.{$extensions[$folder]}","asset"=> $folder));
+            }
         } );
-    }
 }
 
-function child_theme_styles($params) {
-    wp_enqueue_style( $params['id'], get_stylesheet_directory_uri() . $params['path'], array('generate-style') );
+function child_theme_assets($params) {
+    wp_enqueue_style( $params['id'], get_stylesheet_directory_uri() . $params['path'], array('generate-style'));
+    
+    if ( $params['asset'] == 'scripts'){
+        wp_enqueue_script($params['id'], get_stylesheet_directory_uri() . $params['path'], array(), null, true);
+    }
 }
 
 /* Accept svg images */
