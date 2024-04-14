@@ -30,6 +30,16 @@ html{
 	
 }
 
+/* CONTAINER SECTION */
+.separate-containers .site-main {
+    margin: 0;
+}
+area, .separate-containers .inside-article, .separate-containers .page-header, .separate-containers .paging-navigation {
+    padding: 0px 40px 40px 40px;
+}
+
+/* FOOTER SECTION */
+
 .footer-image {
 	height: auto;
     max-width: 50%;

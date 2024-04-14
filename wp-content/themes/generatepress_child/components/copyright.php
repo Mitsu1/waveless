@@ -4,7 +4,7 @@
         
         $html_copyright = "
             <div class = 'copyright'>	
-		        <div class = 'copyright-left-side'>Copyright <?php echo(date('Y'))?></div>
+		        <div class = 'copyright-left-side'>Copyright " . date('Y') . "</div>
 		        <div class = 'copyright-right-side'>
 			        Powered by 
 			        <a href='https://generatepress.com/' target='_blank' class='footer-link underline'>			GeneratePress</a> — Developed by 

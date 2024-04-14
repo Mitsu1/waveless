@@ -7,6 +7,7 @@
  */
 include('routes.php');
 include('components/card.php');
+include('components/banner.php');
 include('components/copyright.php');
 
 add_filter( 'generate_copyright','my_custom_copyright' );
@@ -23,6 +24,16 @@ function custom_generate_footer_widgets( $widgets ) {
 /* Add custom js/css into header */
 get_routes($custom_props, $extensions);
 //use ayuda a importar variables dentro de mi funcion anonima (closure)
+
+function remote_routes(){
+    $path = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min';
+    
+    wp_enqueue_style( 'swipper-css', "$path.css" . '', array(), null, false);
+    wp_enqueue_script('swipper-js', "$path.js". '', array(), null, false);
+}
+
+add_action('wp_enqueue_scripts', 'remote_routes');
+
 foreach ( $custom_props as $file => $path ){
         add_action( 'wp_enqueue_scripts', function() use ($file, $path, $extensions){
             foreach($path as $folder){

@@ -1,0 +1,31 @@
+.swiper-hero {
+    width: 99vw;
+    height: calc(100vh - 80px);/*header height: 80px*/
+    right: 90px;
+    overflow: hidden;
+}
+
+.swiper-pagination-bullet-active{
+    --swiper-pagination-color: var(--base-7);
+}
+
+.banner-central, .banner-right{
+    background-size: cover;
+    background-position: center;
+}
+.banner-right-title{
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.banner-right-content{
+    width: 30%;
+    margin: 0px 52px;
+    padding-left: 40px;
+    padding-top:100px;
+}
+.banner-central{
+    text-align: center;
+    align-content: center;
+}

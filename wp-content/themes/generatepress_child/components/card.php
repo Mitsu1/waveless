@@ -1,6 +1,6 @@
 <?php
     include_once 'button.php';
-    function subscribe_link($params){
+    function show_card($params){
         
         $img_path = "/waveless/wp-content/uploads/2024/04";
 
@@ -42,5 +42,5 @@
 
         return $html_out . "</div></div>";
     }
-    add_shortcode('wp_caption_text','subscribe_link');
+    add_shortcode('wp_card','show_card');
 ?>
