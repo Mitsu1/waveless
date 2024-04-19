@@ -117,6 +117,19 @@
     transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     
 }
+.max-width-40ch{
+	animation: move-up 2s;
+}
+
+@keyframes move-up {
+	from{
+		transform: translateY(33px);
+	}
+	to{
+		transform: translateY(0px);
+	}
+	
+}
 
 @keyframes reduce-size{
     0%{

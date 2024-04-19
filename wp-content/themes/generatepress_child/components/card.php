@@ -42,7 +42,7 @@
             }
         $info_side .="
                 <h3 class='card-title max-width-20ch'>{$card_content['title']}</h3>
-                <p class='max-width-40ch'>{$card_content['content']}</p>
+                <p id = 'card_text_{$card_content['title']}' class='max-width-40ch'>{$card_content['content']}</p>
                 $button_content
             </div>
         ";

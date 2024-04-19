@@ -30,12 +30,13 @@ function show_banner($params){
                     <h3 class = '$class-title'>$title</h3>
                     <p class = '$class-text'>$text</p>";
                     if ( $slide['buttons'] ){
-                        $html_out .= "<div class = 'button-area-{$class}'></div>";
-                        foreach($slide['buttons'] as $button){
-                            $atts_for_button = set_button($button);
-                            $button_content = get_button($atts_for_button);
-                            $html_out .= "<div class = '{$button['btn_class']}-{$button['btn_text']}-image'>$button_content</div>";
-                        }
+                            foreach($slide['buttons'] as $button){
+                                $atts_for_button = set_button($button);
+                                $button_content = get_button($atts_for_button);
+                                $html_out .= "<div class = '{$button['btn_class']}-{$button['btn_text']}-image'>$button_content</div>";
+                                
+                            }
+                        
                     }
         $html_out .=
                 "</div>
