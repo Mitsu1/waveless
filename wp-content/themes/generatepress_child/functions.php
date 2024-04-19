@@ -27,10 +27,11 @@ get_routes($custom_props, $extensions);
 
 function remote_routes(){
     $path = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min';
-    
-    wp_enqueue_style( 'swipper-css', "$path.css" . '', array(), null, false);
-    wp_enqueue_script('swipper-js', "$path.js". '', array(), null, false);
+    wp_enqueue_style( 'swiper-css', "$path.css" . '', array(), null, false);
+    wp_enqueue_script('swiper-js', "$path.js". '', array(), null, false);
 }
+
+wp_enqueue_script('scripts-js', get_stylesheet_directory_uri() ."/scripts.js". '', array(), null, false);
 
 add_action('wp_enqueue_scripts', 'remote_routes');
 

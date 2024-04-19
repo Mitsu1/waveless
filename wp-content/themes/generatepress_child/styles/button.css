@@ -11,24 +11,47 @@
 	height: 40px
 }
 
-.ch-bg-color{
+.ch-bg-color-base-3, .ch-bg-color-base-7, .ch-bg-color-base-8{
     display: inline;
     position: absolute;
     border-radius: 3px;
     align-content: center;
-    border: 1px solid #000;
     transition: all 300ms ease-in-out;
 }
-.ch-bg-color:hover{
-    background-color: var(--base-4);
-    border: 1px solid transparent;
+.ch-bg-color-base-3, .ch-bg-color-base-8{
+    border: 1px solid #000;
 }
-
+.ch-bg-color-base-8{
+    background-color: transparent;
+}
+.ch-bg-color-base-3:hover{
+    border: 1px solid transparent;
+    background-color: var(--base-4);
+}
+.ch-bg-color-base-8:hover{
+    border: 1px solid transparent;
+    background-color: var(--base-3);
+}
+.ch-bg-color-base-7{
+    border: 1px solid #f3c261;    
+}
+.ch-bg-color-base-7 .strong-base-7{
+    color: var(--base-3) ;
+}
+.ch-bg-color-base-7:hover{
+    border: 1px solid transparent;
+    background-color: var(--base-3);
+    transition: all 400ms ease-in-out;
+}
+.ch-bg-color-base-7:hover .strong-base-7{
+    color: #000;
+}
 /* ICONS */
 .icon-arrow{
 	font-size: 18px;
     padding-left: 8px;
     position: relative;
-    transition: all 300ms ease-in-out;
+    transition: all 100ms ease-in-out;
 }
+
 
