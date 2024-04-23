@@ -1,7 +1,6 @@
 .swiper-hero {
-    width: 99vw;
+    width: 100%;
     height: calc(100vh - 80px);/*header height: 80px*/
-    right: 90px;
     overflow: hidden;
 }
 
@@ -36,22 +35,17 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
+.content-banner-central-text{
+    padding: 0px 100px;
+}
 .banner-right-content{
     width: 30%;
-    margin: 0px 52px;
-    padding-left: 40px;
-    padding-top:100px;
+    padding: 100px 40px;
 }
 
 .banner-central{
     text-align: center;
     align-content: center;
-}
-.banner-central-content{
-    margin: 0px 51px;
-    padding-left: 40px;
-    padding-right: 40px;
 }
 
 .banner-central.title, .banner-central.text{
@@ -65,8 +59,8 @@
 .banner-central-content::after, .banner-right-content::after{
     content: "";
     display: block;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: #f3c261;
     position: absolute;
     top: 0;
@@ -78,9 +72,19 @@
     opacity: .1;
     background-image: linear-gradient(to right, #fff, #f3c261);
 }
-.banner-central-btn-Left{
-    padding-right: 26%;
+
+.buttons-center{
+    display: flex;
+    /*column-gap:18%;*/
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    left: -7%;
+    column-gap: calc(-15vw / 2 + 50% / 2);
+    justify-content: center;
 }
-.banner-central-btn-Right{
-    padding-left: 1%;
+.buttons-center .wp-block-button .wp-element-button{
+    width: 15%;
+    text-wrap: nowrap;
 }

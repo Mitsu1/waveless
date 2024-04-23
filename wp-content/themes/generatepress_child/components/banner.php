@@ -17,7 +17,6 @@ function show_banner($params){
             <div class='swiper swiper-hero'>
                 <div class='swiper-wrapper'>";
 
-    //print_r($params);
     foreach($slides as $slide){
         $image = $slide['image'];
         $class = $slide['class'];
@@ -28,16 +27,17 @@ function show_banner($params){
             <div id = '$class-$image' class='$class swiper-slide' img_path = '$img_path/$image.jpg' alt='placeholder'>
                 <div class = '$class-content'>
                     <h3 class = '$class-title'>$title</h3>
-                    <p class = '$class-text'>$text</p>";
+                    <p class = 'content-$class-text'>$text</p>";
                     if ( $slide['buttons'] ){
+                        $btns_center = count($slide['buttons']) > 1 ? 'buttons-center' : '';
+                        $html_out .= "<div class = '$btns_center'>";
                             foreach($slide['buttons'] as $button){
                                 $atts_for_button = set_button($button);
                                 $button_content = get_button($atts_for_button);
-                                $html_out .= "<div class = '{$button['btn_class']}-{$button['btn_text']}-image'>$button_content</div>";
-                                
+                                $html_out .= $button_content;
                             }
-                        
-                    }
+                        }
+                    $html_out .= "</div>";
         $html_out .=
                 "</div>
             </div>";

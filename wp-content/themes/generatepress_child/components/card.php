@@ -13,7 +13,8 @@
             'card_image' => '',
             'start' => '',
             'end' => '',
-            'img_side'=> 'left'
+            'img_side'=> 'left',
+            'child_class' => '',
         );
 
         $atts_for_cards = array_intersect_key($params, $default);        
@@ -42,11 +43,14 @@
             }
         $info_side .="
                 <h3 class='card-title max-width-20ch'>{$card_content['title']}</h3>
-                <p id = 'card_text_{$card_content['title']}' class='max-width-40ch'>{$card_content['content']}</p>
-                $button_content
+                <p id = 'card_text_{$card_content['title']}' class='max-width-40ch card-text-content'>{$card_content['content']}</p>
+                <div class = 'card-button-content'>
+                    $button_content
+                </div>
             </div>
         ";
-        $global = "<div class = 'self_card_content {$card_content['card_class']}'><div class='_2-column-wrap'>";
+        $global = "<div class = 'self_card_content {$card_content['card_class']}'>
+                    <div class='_2-column-wrap {$card_content['child_class']}'>";
         $html_out = $global . $img_side . $info_side;
 
         if ($card_content['img_side'] == 'right'){
