@@ -61,12 +61,14 @@
     display: block;
     width: 100%;
     height: 100%;
-    background-color: #f3c261;
     position: absolute;
     top: 0;
     left: 0;
     opacity: .7;
     z-index: 0;
+}
+.banner-central-content::after{
+    background-color: #f3c261;
 }
 .banner-right-content::after{
     opacity: .1;

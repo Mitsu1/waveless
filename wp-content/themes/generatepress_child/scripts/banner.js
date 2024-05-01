@@ -8,11 +8,11 @@ banners.forEach(function(banner) {
 const swiper = new Swiper(".swiper-hero", {
   // Optional parameters
     direction: "horizontal",
-    /*loop: true,
+    loop: true,
     effect: "fade",
     autoplay: {
         delay: 4000,
-    },*/
+    },
 
     pagination: {
         el: ".swiper-pagination",

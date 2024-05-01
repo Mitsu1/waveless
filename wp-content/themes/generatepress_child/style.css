@@ -51,8 +51,7 @@ img{
 }
 
 .footer-widgets-container{
-	height: 325px
-	
+	height: 325px;	
 }
 .footer-info .site, .footer-link {
 	font-size: 14px;
@@ -88,7 +87,6 @@ img{
 }
 .inside-site-info {
 	padding: 20px 70px 40px 40px;
-	/*padding: 20px 40px 40px 40px;*/
 	position: relative;
 	font-family: Inter, sans-serif;
 }
@@ -106,18 +104,24 @@ img{
 	display: flex;
 }
 .copyright-left-side {
-	width: 65%;
+	width: 50%;
 	align-content: center;
     text-align: left;
 }
 .copyright-right-side {
-	width: 35%;
+	width: 50%;
 	align-content: center;
     text-align: right;
 }
 
 .site-footer .footer-widgets-container .inside-footer-widgets {
 	margin-top: -15px;
+}
+:where(.wp-block-columns) {
+	margin-bottom: initial;
+}
+.column-wrap.container-reduce-transition.add_margin_top{
+	margin-top: 1.75em;
 }
 
 /* MEDIA QUERIES*/ 
@@ -150,6 +154,7 @@ img{
 	}
 	.banner-right-content::after{
 		opacity: .1;
+		background-color: #f3c261;
 		background-image: linear-gradient(to right, #fff, #f3c261);
 	}
 }
@@ -157,7 +162,7 @@ img{
 @media screen and (max-width: 980px) {
 	.align-left h3 {
 		padding-top: 25px;
-		font-size: 20px;
+		/*font-size: 20px;*/
 	}
 	.card-text-content{
 		font-size: 15px;
@@ -171,12 +176,6 @@ img{
 }
 
 @media screen and (max-width:910px){
-	/*.inside-footer-widgets{
-		flex-direction: column;
-	}
-	/*.footer-widget-2{
-		display: none;
-	}*/
 	.inside-site-info{
 		padding: 20px 20px 40px 20px;
 	}
@@ -202,6 +201,9 @@ img{
 
 }
 @media screen and (max-width:900px){
+	.entry-content .alignwide{
+		max-width: calc(100% + 50px);
+	}
 	.banner-right, .header-widget, .footer-widget-2{
 		display: none;
 	}	
@@ -241,6 +243,9 @@ img{
 	.inside-footer-widgets>div:not(:last-child) {
 		margin-bottom: initial;
 	}
+	.align-right{
+		display:block;
+	}
 	.footer-widget-1{
 		padding-top: initial;
 	}
@@ -259,13 +264,31 @@ img{
 	._2-column-wrap{
 		display: flex;
 		flex-direction: column;
-	}
-	._2-column-wrap{
 		gap: 40px;
 		display: flex;
+		height: initial;
+		align-items: normal;
 	}
 	._2-column-wrap.inverse-column{
 		flex-direction: column-reverse;
+		margin: 20% 20px 0px 30px;
+	}
+	._2-column-wrap > * {
+		flex: 1 1 calc(100% - 20px);
+		max-width: initial;
+		max-height: initial;
+	}
+	._2-column-wrap .column-wrap.align-left {
+		padding-bottom: 20%;
+	}
+	.entry-content .alignwide {
+        margin-left: -30px;
+	}
+	.column-wrap.align-right{
+		padding-bottom: 20%
+	}
+	.classic_card ._2-column-wrap{
+		align-items: left;
 	}
 }
 
@@ -276,9 +299,8 @@ img{
 }
 
 @media screen and (max-width:600px){
-	.banner-central-content {
-		align-content: baseline;
-		margin-bottom: calc(100vh - 70% / 2);
+	.content-banner-central-text {
+		padding: 0px 80px;
 	}
 	.footer-image {
 		max-width: initial;

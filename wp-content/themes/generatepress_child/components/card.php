@@ -11,8 +11,10 @@
             'content' => '', 
             'card_class' => '',
             'card_image' => '',
-            'start' => '',
-            'end' => '',
+            'img_start' => '',
+            'img_end' => '',
+            'text_start' => '',
+            'text_end' => '',
             'img_side'=> 'left',
             'child_class' => '',
         );
@@ -23,15 +25,16 @@
         $atts_for_button = set_button($params);
         $button_content = get_button($atts_for_button);
         $align = $card_content['img_side'];
+        $margin_top = $card_content['child_class'] ? 'no_margin_top' : 'add_margin_top';
         $img_side = "
-            <div class='column-wrap container-reduce-transition'>
+            <div class='column-wrap container-reduce-transition $margin_top'>
                 <img id='rdc_{$card_content['card_image']}' 
-                    class= 'img-reduce-transition' 
+                    class= 'pause-animation' 
                     src='$img_path/{$card_content['card_image']}.{$card_content['ext']}' 
                     loading='lazy' 
                     alt='' 
-                    start = {$card_content['start']} 
-                    end = {$card_content['end']}/>
+                    img_start = {$card_content['img_start']} 
+                    img_end = {$card_content['img_end']}/>
             </div>
         ";
 
@@ -43,7 +46,9 @@
             }
         $info_side .="
                 <h3 class='card-title max-width-20ch'>{$card_content['title']}</h3>
-                <p id = 'card_text_{$card_content['title']}' class='max-width-40ch card-text-content'>{$card_content['content']}</p>
+                <p id = 'card_text_{$card_content['title']}' class='max-width-40ch card-text-content pause-animation' text_start = {$card_content['text_start']}  text_end = {$card_content['text_end']}>
+                    {$card_content['content']}
+                </p>
                 <div class = 'card-button-content'>
                     $button_content
                 </div>
